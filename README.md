@@ -15,6 +15,9 @@ This will take a lot of time, I think we all should get 3/12 weeks each assigned
 
 # Breakdown of work:
 
+Justin -- Grabbing all lecture data
+Kaiyo and Azaan -- research best way to fine tune model
+
 
 
 # 
