@@ -14,7 +14,7 @@ This will take a lot of time, I think we all should get 3/12 weeks each assigned
 5. Integrate LLM into chatbot framework. We'll get there when we get there lol.
 
 # Breakdown of work and Deadlines:
-\\
+\
 * Justin - Grabbing all lecture data
   - November 20th to get all it down
 * Kaiyo and Azaan - research best way to fine tune model using QA pairs
@@ -23,7 +23,7 @@ This will take a lot of time, I think we all should get 3/12 weeks each assigned
   - (November) To be determined, timeline
 
 # Files and Folders:
-\\
+\
 * Data folder
 
 * Folder for QA pairs
