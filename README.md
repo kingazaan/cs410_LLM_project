@@ -22,8 +22,9 @@ This will take a lot of time, I think we all should get 3/12 weeks each assigned
 * Kaiyo and Azaan - reseearch how to ue gpt-3 model (We can try and test some data in this model to create LLM)
   - (November) To be determined, timeline
 
-# Files:
-
-Data folder
-Folder for QA pairs
-testing.py script for using gpt-4
+# Files and Folders:
+\\
+* Data folder
+* Folder for QA pairs
+* Scripts
+  - testing.py script for using gpt-4
