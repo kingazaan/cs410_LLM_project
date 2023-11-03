@@ -24,7 +24,10 @@ This will take a lot of time, I think we all should get 3/12 weeks each assigned
 
 # Files and Folders:
 \\
+
 * Data folder
+
 * Folder for QA pairs
+
 * Scripts
   - testing.py script for using gpt-4
