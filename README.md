@@ -15,11 +15,11 @@ This will take a lot of time, I think we all should get 3/12 weeks each assigned
 
 # Breakdown of work and Deadlines:
 
-Justin - Grabbing all lecture data
+* Justin - Grabbing all lecture data
   - November 20th to get all it down
-Kaiyo and Azaan - research best way to fine tune model using QA pairs
+* Kaiyo and Azaan - research best way to fine tune model using QA pairs
   - November 11th Find best wya to create QAs or a better method to fine tune
-Kaiyo and Azaan - reseearch how to ue gpt-3 model (We can try and test some data in this model to create LLM)
+* Kaiyo and Azaan - reseearch how to ue gpt-3 model (We can try and test some data in this model to create LLM)
   - (November) To be determined, timeline
 
 # Files:
