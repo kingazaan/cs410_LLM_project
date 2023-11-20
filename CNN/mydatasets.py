@@ -50,10 +50,10 @@ class MyDataset(data.Dataset):
             self.examples = []
             if dataset == 'IMDB':
                 with open('IMDB.neg', errors='ignore') as f:
-                    examples += [
+                    self.examples += [
                         data.Example.fromlist([line, 'negative'], fields) for line in f]
                 with open('IMDB.pos', errors='ignore') as f:
-                    examples += [
+                    self.examples += [
                         data.Example.fromlist([line, 'positive'], fields) for line in f]
             elif dataset == 'financial':
                 with open('financial.neg', errors='ignore') as f:

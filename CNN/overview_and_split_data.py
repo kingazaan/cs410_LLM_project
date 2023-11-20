@@ -154,40 +154,33 @@ def classify_ternary(filename, output1, output2, output3, header_needed, preproc
 
 
 if __name__ == '__main__':
-    data = pd.read_csv('IMDB Dataset.csv')
-    data['length'] = data['review'].apply(len)
-    data['words'] = [len(x.split(" ")) for x in data['review']]
-
-    print("------------IMDB DATASET-------------\n")
-    print('Average Number of Characters:\n', data['length'].mean())
-    print('Average Number of Words:\n', data['words'].mean())
-    print('Size:\n', data['sentiment'].count())
-    print('Positive Count\n', data[data['sentiment'] == 'positive']['sentiment'].count())
-    print('Negative Count\n', data[data['sentiment'] == 'negative']['sentiment'].count())
-
-    print("------------Financial Sentiment DATASET-------------\n")
-    data = pd.read_csv('financial-sentiment.csv', encoding='latin-1', names = ['sentiment', 'review'])
-    data['length'] = data['review'].apply(len)
-    data['words'] = [len(x.split(" ")) for x in data['review']]
-    print('Average Number of Characters:\n', data['length'].mean())
-    print('Average Number of Words:\n', data['words'].mean())
-    print('Size:\n', data['sentiment'].count())
-    print('Positive Count\n', data[data['sentiment'] == 'positive']['sentiment'].count())
-    print('Negative Count\n', data[data['sentiment'] == 'negative']['sentiment'].count())
-    print('Neutral Count\n', data[data['sentiment'] == 'neutral']['sentiment'].count())
-    
-    '''
-    shuffle_split(70, 90, "IMDB Dataset.csv", "IMDB - P - Train.csv",
-                  "IMDB - P - Test.csv", "IMDB - P - Validate.csv", True, True)
-    '''
     if len(sys.argv) == 2:
         print("Trying to split original dataset")
         if sys.argv[1] == 'IMDB Dataset.csv':
+            print("------------IMDB DATASET-------------\n")
+            data = pd.read_csv('IMDB Dataset.csv')
+            data['length'] = data['review'].apply(len)
+            data['words'] = [len(x.split(" ")) for x in data['review']]
+            print('Average Number of Characters:\n', data['length'].mean())
+            print('Average Number of Words:\n', data['words'].mean())
+            print('Size:\n', data['sentiment'].count())
+            print('Positive Count\n', data[data['sentiment'] == 'positive']['sentiment'].count())
+            print('Negative Count\n', data[data['sentiment'] == 'negative']['sentiment'].count())
             shuffle_split(70, 90, "IMDB Dataset.csv", "IMDB - P - Train.csv",
                   "IMDB - P - Test.csv", "IMDB - P - Validate.csv", True, True)
             classify_binary("IMDB Dataset.csv", "IMDB.pos",
                     "IMDB.neg", True, True)
         elif sys.argv[1] == 'financial-sentiment.csv':
+            print("------------Financial Sentiment DATASET-------------\n")
+            data = pd.read_csv('financial-sentiment.csv', encoding='latin-1', names = ['sentiment', 'review'])
+            data['length'] = data['review'].apply(len)
+            data['words'] = [len(x.split(" ")) for x in data['review']]
+            print('Average Number of Characters:\n', data['length'].mean())
+            print('Average Number of Words:\n', data['words'].mean())
+            print('Size:\n', data['sentiment'].count())
+            print('Positive Count\n', data[data['sentiment'] == 'positive']['sentiment'].count())
+            print('Negative Count\n', data[data['sentiment'] == 'negative']['sentiment'].count())
+            print('Neutral Count\n', data[data['sentiment'] == 'neutral']['sentiment'].count())
             shuffle_split(70, 90, "financial-sentiment.csv", "financial-sentiment - Train.csv",
                   "financial-sentiment - Validate.csv", "financial-sentiment - Test.csv", True, True)
             classify_ternary("financial-sentiment.csv", "financial.pos", "financial.neu",
