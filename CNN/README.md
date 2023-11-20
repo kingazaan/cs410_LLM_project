@@ -9,7 +9,7 @@ python3 overview_and_split_data
 ```
 - Train the Model:
 ```
-python3 main.py
+python3 main.py -dataset="IMDB"
 ```
 - Using the Snapshots of our trained model to predict users' attitude of our LLM's response:
 ```
