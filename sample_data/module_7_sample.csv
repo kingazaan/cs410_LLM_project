@@ -1,0 +1,693 @@
+Week Number,Lesson Number,Lesson Title,Transcript
+1,1,Natural Language Content Analysis,"This lecture is about Natural Language of Content Analysis. As you see from this picture, this is really the first step
+to process any text data. Text data are in natural languages. So computers have to understand
+natural languages to some extent, in order to make use of the data. So that's the topic of this lecture. We're going to cover three things. First, what is natural
+language processing, which is the main technique for processing
+natural language to obtain understanding. The second is the state of
+the art of NLP which stands for natural language processing. Finally we're going to cover the relation
+between natural language processing and text retrieval. First, what is NLP? Well the best way to explain it
+is to think about if you see a text in a foreign language
+that you can understand. Now what do you have to do in
+order to understand that text? This is basically what
+computers are facing. So looking at the simple sentence like
+a dog is chasing a boy on the playground. We don't have any problems
+understanding this sentence. But imagine what the computer would
+have to do in order to understand it. Well in general,
+it would have to do the following. First, it would have to know dog
+is a noun, chasing's a verb, etc. So this is called lexical analysis,
+or part-of-speech tagging, and we need to figure out the syntactic
+categories of those words. So that's the first step. After that, we're going to figure
+out the structure of the sentence. So for example, here it shows that A and the dog would go together
+to form a noun phrase. And we won't have dog and is to go first. And there are some structures
+that are not just right. But this structure shows what we might
+get if we look at the sentence and try to interpret the sentence. Some words would go together first, and then they will go together
+with other words. So here we show we have noun phrases
+as intermediate components, and then verbal phrases. Finally we have a sentence. And you get this structure. We need to do something called
+a semantic analysis, or parsing. And we may have a parser
+accompanying the program, and that would automatically
+created this structure. At this point you would know
+the structure of this sentence, but still you don't know
+the meaning of the sentence. So we have to go further
+to semantic analysis. In our mind we usually can map such a sentence to what we already
+know in our knowledge base. For example, you might imagine
+a dog that looks like that. There's a boy and
+there's some activity here. But for a computer would have
+to use symbols to denote that. We'd use a symbol (d1) to denote a dog. And (b)1 can denote a boy and
+then (p)1 can denote a playground. Now there is also a chasing
+activity that's happening here so we have a relationship chasing
+that connects all these symbols. So this is how a computer would obtain
+some understanding of this sentence. Now from this representation we could
+also further infer some other things, and we might indeed naturally think of
+something else when we read a text and this is called inference. So for example, if you believe
+that if someone's being chased and this person might be scared,
+but with this rule, you can see computers could also
+infer that this boy maybe scared. So this is some extra knowledge
+that you'd infer based on some understanding of the text. You can even go further to understand
+why the person say at this sentence. So this has to do as a use of language. This is called pragmatic analysis. In order to understand the speak
+actor of a sentence, right? We say something to
+basically achieve some goal. There's some purpose there. And this has to do with
+the use of language. In this case the person who said this sentence might be reminding
+another person to bring back the dog. That could be one possible intent. To reach this level of
+understanding would require all of these steps and
+a computer would have to go through all these steps in order to completely
+understand this sentence. Yet we humans have no trouble
+with understanding that, we instantly would get everything. There is a reason for that. That's because we have a large
+knowledge base in our brain and we can use common sense knowledge
+to help interpret the sentence. Computers unfortunately are hard
+to obtain such understanding. They don't have such a knowledge base. They are still incapable of doing
+reasoning and uncertainties, so that makes natural language
+processing difficult for computers. But the fundamental reason why natural
+language processing is difficult for computers is simply because natural
+language has not been designed for computers. Natural languages are designed for
+us to communicate. There are other languages designed for
+computers. For example, programming languages. Those are harder for us, right? So natural languages is designed to
+make our communication efficient. As a result,
+we omit a lot of common sense knowledge because we assume everyone
+knows about that. We also keep a lot of ambiguities because
+we assume the receiver or the hearer could know how to decipher an ambiguous word
+based on the knowledge or the context. There's no need to demand different
+words for different meanings. We could overload the same word with
+different meanings without the problem. Because of these reasons this makes every
+step in natural language of processing difficult for computers,
+ambiguity is the main difficulty. And common sense and reasoning is
+often required, that's also hard. So let me give you some
+examples of challenges here. Consider the word level ambiguity. The same word can have
+different syntactic categories. For example design can be a noun or
+a verb. The word of root may
+have multiple meanings. So square root in math sense or
+the root of a plant. You might be able to think
+about it's meanings. There are also syntactical ambiguities. For example, the main topic of this
+lecture, natural language processing, can actually be interpreted in two
+ways in terms of the structure. Think for a moment and
+see if you can figure that out. We usually think of this as
+processing of natural language, but you could also think of this as do
+say, language processing is natural. So this is an example
+of synaptic ambiguity. What we have different is
+structures that can be applied to the same sequence of words. Another common example of an ambiguous
+sentence is the following. A man saw a boy with a telescope. Now in this case the question is,
+who had a telescope. This is called a prepositional
+phrase attachment ambiguity or PP attachment ambiguity. Now we generally don't have a problem with
+these ambiguities because we have a lot of background knowledge to help
+us disambiguate the ambiguity. Another example of difficulty
+is anaphora resolution. So think about the sentence John
+persuaded Bill to buy a TV for himself. The question here is does
+himself refer to John or Bill? So again this is something that
+you have to use some background or the context to figure out. Finally, presupposition
+is another problem. Consider the sentence,
+he has quit smoking. Now this obviously implies
+that he smoked before. So imagine a computer wants to understand
+all these subtle differences and meanings. It would have to use a lot of
+knowledge to figure that out. It also would have to maintain a large
+knowledge base of all the meanings of words and how they are connected to our
+common sense knowledge of the world. So this is why it's very difficult. So as a result, we are steep not perfect, in fact far from perfect in understanding
+natural language using computers. So this slide sort of gains a simplified
+view of state of the art technologies. We can do part of speech
+tagging pretty well, so I showed 97% accuracy here. Now this number is obviously
+based on a certain dataset, so don't take this literally. This just shows that we
+can do it pretty well. But it's still not perfect. In terms of parsing,
+we can do partial parsing pretty well. That means we can get noun phrase
+structures, or verb phrase structure, or some segment of the sentence, and this dude correct them in
+terms of the structure. And in some evaluation results,
+we have seen above 90% accuracy in terms of partial
+parsing of sentences. Again, I have to say these numbers
+are relative to the dataset. In some other datasets,
+the numbers might be lower. Most of the existing work has been
+evaluated using news dataset. And so a lot of these numbers are more or
+less biased toward news data. Think about social media data,
+the accuracy likely is lower. In terms of a semantical analysis, we are far from being able to do
+a complete understanding of a sentence. But we have some techniques
+that would allow us to do partial understanding of the sentence. So I could mention some of them. For example, we have techniques that can
+allow us to extract the entities and relations mentioned in text articles. For example,
+recognizing dimensions of people, locations, organizations, etc in text. So this is called entity extraction. We may be able to recognize the relations. For example,
+this person visited that place or this person met that person or
+this company acquired another company. Such relations can be extracted by using the computer current
+Natural Language Processing techniques. They're not perfect but
+they can do well for some entities. Some entities are harder than others. We can also do word sense
+disintegration to some extend. We have to figure out whether this word in
+this sentence would have certain meaning in another context the computer could
+figure out, it has a different meaning. Again, it's not perfect, but
+you can do something in that direction. We can also do sentiment analysis, meaning, to figure out whether
+a sentence is positive or negative. This is especially useful for
+review analysis, for example. So these are examples
+of semantic analysis. And they help us to obtain partial
+understanding of the sentences. It's not giving us a complete
+understanding, as I showed it before, for this sentence. But it would still help us gain
+understanding of the content. And these can be useful. In terms of inference,
+we are not there yet, probably because of the general difficulty
+of inference and uncertainties. This is a general challenge
+in artificial intelligence. Now that's probably also because
+we don't have complete semantical representation for
+natural [INAUDIBLE] text. So this is hard. Yet in some domains perhaps,
+in limited domains when you have a lot of restrictions on the word uses, you may be
+able to perform inference to some extent. But in general we can not
+really do that reliably. Speech act analysis is also
+far from being done and we can only do that analysis for
+very special cases. So this roughly gives you some
+idea about the state of the art. And then we also talk a little
+bit about what we can't do, and so we can't even do 100%
+part of speech tagging. Now this looks like a simple task, but think about the example here,
+the two uses of off may have different syntactic categories if you
+try to make a fine grained distinctions. It's not that easy to figure
+out such differences. It's also hard to do
+general complete parsing. And again, the same sentence
+that you saw before is example. This ambiguity can be very hard to
+disambiguate and you can imagine example where you have to use a lot of knowledge
+in the context of the sentence or from the background, in order to figure
+out who actually had the telescope. So although the sentence looks very
+simple, it actually is pretty hard. And in cases when the sentence is
+very long, imagine it has four or five prepositional phrases, and there
+are even more possibilities to figure out. It's also harder to do precise
+deep semantic analysis. So here's an example. In the sentence ""John owns a restaurant.""
+How do we define owns exactly? The word own,
+it is something that we can understand but it's very hard to precisely describe
+the meaning of own for computers. So as a result we have a robust and
+a general Natural Language Processing techniques
+that can process a lot of text data. In a shallow way,
+meaning we only do superficial analysis. For example, parts of speech tagging or a
+partial parsing or recognizing sentiment. And those are not deep understanding, because we're not really understanding
+the exact meaning of the sentence. On the other hand of the deep
+understanding techniques tend not to scale up well, meaning that they would
+fill only some restricted text. And if you don't restrict
+the text domain or the use of words, then these
+techniques tend not to work well. They may work well based on machine
+learning techniques on the data that are similar to the training data
+that the program has been trained on. But they generally wouldn't work well on
+the data that are very different from the training data. So this pretty much summarizes the state
+of the art of Natural Language Processing. Of course, within such a short amount
+of time we can't really give you a complete view of NLP,
+which is a big field. And I'd expect to see multiple courses on
+Natural Language Processing topic itself. But because of its relevance to the topic
+that we talk about, it's useful for you to know the background in case
+you happen to be exposed to that. So what does that mean for Text Retrieval? Well, in Text Retrieval we
+are dealing with all kinds of text. It's very hard to restrict
+text to a certain domain. And we also are often dealing
+with a lot of text data. So that means The NLP techniques must
+be general, robust, and efficient. And that just implies today we can only
+use fairly shallow NLP techniques for text retrieval. In fact, most search engines today use something
+called a bag of words representation. Now, this is probably the simplest
+representation you can possibly think of. That is to turn text data
+into simply a bag of words. Meaning we'll keep individual words, but
+we'll ignore all the orders of words. And we'll keep duplicated
+occurrences of words. So this is called a bag
+of words representation. When you represent text in this way,
+you ignore a lot of valid information. That just makes it harder to understand
+the exact meaning of a sentence because we've lost the order. But yet this representation tends
+to actually work pretty well for most search tasks. And this was partly because the search
+task is not all that difficult. If you see matching of some of
+the query words in a text document, chances are that that document is about
+the topic, although there are exceptions. So in comparison of some other tasks, for example, machine translation would require
+you to understand the language accurately. Otherwise the translation would be wrong. So in comparison such tasks
+are all relatively easy. Such a representation is often sufficient
+and that's also the representation that the major search engines today,
+like a Google or Bing are using. Of course, I put in parentheses but
+not all, of course there are many queries that are not answered well by
+the current search engines, and they do require the replantation that
+would go beyond bag of words replantation. That would require more natural
+language processing to be done. There was another reason why we
+have not used the sophisticated NLP techniques in modern search engines. And that's because some
+retrieval techniques actually, naturally solved the problem of NLP. So one example is word
+sense disintegration. Think about a word like Java. It could mean coffee or
+it could mean program language. If you look at the word anome,
+it would be ambiguous, but when the user uses the word in the query,
+usually there are other words. For example, I'm looking for
+usage of Java applet. When I have applet there,
+that implies Java means program language. And that contest can help us
+naturally prefer documents which Java is referring
+to program languages. Because those documents would
+probably match applet as well. If Java occurs in that
+documents where it means coffee then you would never match applet or
+with very small probability. So this is the case when
+some retrieval techniques naturally achieve the goal of word. Another example is some technique called feedback which we will talk about
+later in some of the lectures. This technique would allow us to add
+additional words to the query and those additional words could
+be related to the query words. And these words can help matching
+documents where the original query words have not occurred. So this achieves, to some extent,
+semantic matching of terms. So those techniques also helped us bypass some of the difficulties
+in natural language processing. However, in the long run we still need
+a deeper natural language processing techniques in order to improve the
+accuracy of the current search engines. And it's particularly needed for
+complex search tasks. Or for question and answering. Google has recently launched a knowledge
+graph, and this is one step toward that goal, because knowledge graph would
+contain entities and their relations. And this goes beyond the simple
+bag of words replantation. And such technique should help us
+improve the search engine utility significantly, although this is the open
+topic for research and exploration. In sum, in this lecture we
+talked about what is NLP and we've talked about the state
+of that techniques. What we can do, what we cannot do. And finally, we also explain why
+the bag of words replantation remains the dominant replantation
+used in modern search engines, even though deeper NLP would be needed for
+future search engines. If you want to know more, you can take
+a look at some additional readings. I only cited one here and
+that's a good starting point. Thanks."
+1,2,Text Access,"In this lecture,
+we're going to talk about the text access. In the previous lecture, we talked about
+the natural language content, analysis. We explained that the state of the are
+natural language processing techniques are still not good enough to process
+a lot of unrestricted text data in a robust manner. As a result, bag of words remains very popular in
+applications like a search engine. In this lecture, we're going to talk
+about some high-level strategies to help users get access to the text data. This is also important step to convert
+raw big text data into small random data. That are actually needed
+in a specific application. So the main question we'll address here,
+is how can a text information system, help users
+get access to the relevant text data? We're going to cover two complimentary
+strategies, push versus pull. And then we're going to talk about
+two ways to implement the pull mode, querying versus browsing. So first push versus pull. These are two different ways connect
+the users with the right information at the right time. The difference is which
+takes the initiative, which party takes the initiative. In the pull mode, the users take the initiative to
+start the information access process. And in this case, a user typically would
+use a search engine to fulfill the goal. For example,
+the user may type in the query and then browse the results to
+find the relevant information. So this is usually appropriate for satisfying a user's ad
+hoc information need. An ad hoc information need is
+a temporary information need. For example, you want to buy a product so you suddenly have a need to read
+reviews about related product. But after you have cracked information,
+you have purchased in your product. You generally no longer
+need such information, so it's a temporary information need. In such a case, it's very hard for
+a system to predict your need, and it's more proper for
+the users to take the initiative, and that's why search engines are very useful. Today because many people have many
+information needs all the time. So as we're speaking Google is probably
+processing many queries from this. And those are all, or mostly adequate. Information needs. So this is a pull mode. In contrast in the push mode in
+the system would take the initiative to push the information to the user or
+to recommend information to the user. So in this case this is usually
+supported by a recommender system. Now this would be appropriate if. The user has a stable information. For example you may have a research
+interest in some topic and that interest tends to stay for a while. So, it's rather stable. Your hobby is another example of. A stable information need is such a case
+the system can interact with you and can learn your interest, and
+then to monitor the information stream. If the system hasn't seen any
+relevant items to your interest, the system could then take the initiative
+to recommend the information to you. So, for example, a news filter or news recommended system could
+monitor the news stream and identify interesting news to you and
+simply push the news articles to you. This mode of information access may be
+also a property that when this system has good knowledge about the users need
+and this happens in the search context. So for example, when you search for
+information on the web a search engine might infer you might be
+also interested in something related. Formation. And they would recommend the information
+to you, so that just reminds you, for example, of an advertisement
+placed on the search page. So this is about the two high level
+strategies or two modes of text access. Now let's look at the pull
+mode in more detail. In the pull mode, we can further
+distinguish it two ways to help users. Querying versus browsing. In querying,
+a user would just enter a query. Typical the keyword query, and the search engine system would
+return relevant documents to use. And this works well when the user knows
+what exactly are the keywords to be used. So if you know exactly
+what you are looking for, you tend to know the right keywords. And then query works very well,
+and we do that all of the time. But we also know that sometimes
+it doesn't work so well. When you don't know the right
+keywords to use in the query, or you want to browse information
+in some topic area. You use because browsing
+would be more useful. So in this case, in the case of browsing,
+the users would simply navigate it, into the relevant information
+by following the paths supported by the structures of documents. So the system would maintain
+some kind of structures and then the user could follow
+these structures to navigate. So this really works well when the user
+wants to explore the information space or the user doesn't know what
+are the keywords to using the query. Or simply because the user finds it
+inconvenient to type in a query. So even if a user knows what query to
+type in if the user is using a cellphone to search for information. It's still harder to enter the query. In such a case, again,
+browsing tends to be more convenient. The relationship between browsing and
+querying is best understood by making and imagine you're site seeing. Imagine if you're touring a city. Now if you know the exact
+address of attraction. Taking a taxi there is
+perhaps the fastest way. You can go directly to the site. But if you don't know the exact address,
+you may need to walk around. Or you can take a taxi to a nearby
+place and then walk around. It turns out that we do exactly
+the same in the information studies. If you know exactly what you
+are looking for, then you can use the right keywords in your query
+to find the information you're after. That's usually the fastest way to do,
+find information. But what if you don't know
+the exact keywords to use? Well, you clearly probably won't so well. You will not related pages. And then, you need to also walk
+around in the information space, meaning by following the links or
+by browsing. You can then finally get
+into the relevant page. If you want to learn about again. You will likely do a lot of browsing so just like you are looking around in
+some area and you want to see some interesting attractions
+related in the same. [INAUDIBLE]. So this analogy also tells us that
+today we have very good support for query, but we don't really have
+good support for browsing. And this is because in order
+to browse effectively, we need a map to guide us,
+just like you need a map to. Of Chicago, through the city of Chicago, you need a
+topical map to tour the information space. So how to construct such a topical
+map is in fact a very interesting research question that might bring us more interesting browsing experience
+on the web or in applications. So, to summarize this lecture, we've talked about the two high level
+strategies for text access; push and pull. Push tends to be supported by
+the Recommender System, and Pull tends to be supported
+by the Search Engine. Of course, in the sophisticated
+[INAUDIBLE] information system, we should combine the two. In the pull mode, we can further this
+[INAUDIBLE] Querying and Browsing. Again we generally want to combine
+the two ways to help you assist, so that you can support
+the both querying nad browsing. If you want to know more about
+the relationship between pull and push, you can read this article. This give excellent discussion of the
+relationship between machine filtering and information retrieval. Here informational filtering is similar
+to information recommendation or the push mode of information access."
+1,3,Text Retrieval Problem,"This lecture is about
+the text retrieval problem. This picture shows our overall plan for
+lectures. In the last lecture, we talked about
+the high level strategies for text access. We talked about push versus pull. Such engines are the main tools for
+supporting the pull mode. Starting from this lecture, we're going to talk about the how
+search engines work in detail. So first it's about
+the text retrieval problem. We're going to talk about
+the three things in this lecture. First, we define Text Retrieval. Second we're going to make a comparison
+between Text Retrieval and the related task Database Retrieval. Finally, we're going to talk about
+the Document Selection versus Document Ranking as two strategies for
+responding to a user's query. So what is Text Retrieval? It should be a task that's familiar for the most of us because we're using
+web search engines all the time. So text retrieval is basically a task where the system would respond to
+a user's query With relevant documents. Basically, it's for supporting a query as one way to implement the poll
+mode of information access. So the situation is the following. You have a collection of
+text retrieval documents. These documents could be all
+the webpages on the web, or all the literature articles
+in the digital library. Or maybe all the text
+files in your computer. A user will typically give a query to
+the system to express information need. And then, the system would return
+relevant documents to users. Relevant documents refer to those
+documents that are useful to the user who typed in the query. All this task is a phone call
+that information retrieval. But literally information retrieval would
+broadly include the retrieval of other non-textual information as well,
+for example audio, video, etc. It's worth noting that
+Text Retrieval is at the core of information retrieval in
+the sense that other medias such as video can be retrieved by
+exploiting the companion text data. So for example,
+current the image search engines actually match a user's query was
+the companion text data of the image. This problem is also
+called search problem. And the technology is often called
+the search technology industry. If you ever take a course in databases it will be useful to pause
+the lecture at this point and think about the differences between
+text retrieval and database retrieval. Now these two tasks
+are similar in many ways. But, there are some important differences. So, spend a moment to think about
+the differences between the two. Think about the data, and the information
+managed by a search engine versus those that are managed
+by a database system. Think about the different between
+the queries that you typically specify for database system versus queries that
+are typed in by users in a search engine. And then finally think about the answers. What's the difference between the two? Okay, so if we think about the information
+or data managed by the two systems, we will see that in text retrieval. The data is unstructured, it's free text. But in databases, they are structured data
+where there is a clear defined schema to tell you this column is the names
+of people and that column is ages, etc. The unstructured text is not obvious what are the names of people
+mentioned in the text. Because of this difference, we also see
+that text information tends to be more ambiguous and we talk about that in the
+processing chapter, whereas in databases. But they don't tend to have
+where to find the semantics. The results important
+difference in the queries, and this is partly due to the difference
+in the information or data. So test queries tend to be ambiguous. Whereas in their research,
+the queries are typically well-defined. Think about a SQL query that would clearly
+specify what records to be returned. So it has very well-defined semantics. Keyword queries or electronic queries tend to be incomplete,
+also in that it doesn't really specify what documents
+should be retrieved. Whereas complete specification for
+what should be returned. And because of these differences,
+the answers would be also different. Being the case of text retrieval, we're
+looking for it rather than the documents. In the database search,
+we are retrieving records or match records with the sequel
+query more precisely. Now in the case of text retrieval,
+what should be the right answers to the query is not very well specified,
+as we just discussed. So it's unclear what should be
+the right answers to a query. And this has very important consequences,
+and that is, textual retrieval is
+an empirically defined problem. So this is a problem because
+if it's empirically defined, then we can not mathematically prove one
+method is better than another method. That also means we must rely
+on empirical evaluation involving users to know
+which method works better. And that's why we have. You need more than one lectures
+to cover the issue of evaluation. Because this is very important topic for
+Sir Jennings. Without knowing how to evaluate heroism
+properly, there's no way to tell whether we have got the better or
+whether one system is better than another. So now let's look at
+the problem in a formal way. So, this slide shows a formal formulation
+of the text retrieval problem. First, we have our vocabulary set, which
+is just a set of words in a language. Now here,
+we are considering only one language, but in reality, on the web,
+there might be multiple natural languages. We have texts that are in
+all kinds of languages. But here for simplicity, we just
+assume that is one kind of language. As the techniques used for retrieving
+data from multiple languages Are more or less similar to the techniques used for
+retrieving documents in one end, which although there is important difference,
+the principle methods are very similar. Next, we have the query,
+which is a sequence of words. And so here, you can see the query is defined as
+a sequence of words. Each q sub i is a word in the vocabulary. A document is defined in the same way,
+so it's also a sequence of words. And here,
+d sub ij is also a word in the vocabulary. Now typically, the documents
+are much longer than queries. But there are also cases where
+the documents may be very short. So you can think about what
+might be a example of that case. I hope you can think of Twitter search. Tweets are very short. But in general,
+documents are longer than the queries. Now, then we have
+a collection of documents, and this collection can be very large. So think about the web. It could be very large. And then the goal of text retrieval
+is you'll find the set of relevant in the documents, which we denote by R'(q),
+because it depends on the query. And this in general, a subset of all
+the documents in the collection. Unfortunately, this set of relevant
+documents is generally unknown, and user-dependent in the sense that,
+for the same query typed in by different users, they expect
+the relevant documents may be different. The query given to us by
+the user is only a hint on which document should be in this set. And indeed, the user is generally
+unable to specify what exactly should be in this set, especially in the case
+of web search, where the connection's so large, the user doesn't have complete
+knowledge about the whole production. So the best search system
+can do is to compute an approximation of this
+relevant document set. So we denote it by R'(q). So formerly,
+we can see the task is to compute this R'(q) approximation of
+the relevant documents. So how can we do that? Now imagine if you are now asked
+to write a program to do this. What would you do? Now think for a moment. Right, so these are your input. The query, the documents. And then you are to compute
+the answers to this query, which is a set of documents that
+would be useful to the user. So, how would you solve the problem? Now in general,
+there are two strategies that we can use. The first strategy is we do a document
+selection, and that is, we're going to have a binary classification
+function, or binary classifier. That's a function that
+would take a document and query as input, and then give a zero or one as output to indicate whether this
+document is relevant to the query or not. So in this case, you can see the document. The relevant document is set,
+is defined as follows. It basically, all the documents that
+have a value of 1 by this function. So in this case, you can see the system must have decide
+if the document is relevant or not. Basically, it has to say
+whether it's one or zero. And this is called absolute relevance. Basically, it needs to know
+exactly whether it's going to be useful to the user. Alternatively, there's another
+strategy called document ranking. Now in this case, the system is not going to make a call
+whether a document is random or not. But rather the system is going to
+use a real value function, f here. That would simply give us a value that would indicate which
+document is more likely relevant. So it's not going to make a call whether
+this document is relevant or not. But rather it would say which
+document is more likely relevant. So this function then can be
+used to random documents, and then we're going to let
+the user decide where to stop, when the user looks at the document. So we have a threshold theta
+here to determine what documents should be in
+this approximation set. And we're going to assume
+that all the documents that are ranked above the threshold
+are in this set, because in effect, these are the documents that
+we deliver to the user. And theta is a cutoff
+determined by the user. So here we've got some collaboration
+from the user in some sense, because we don't really make a cutoff. And the user kind of helped
+the system make a cutoff. So in this case,
+the system only needs to decide if one document is more
+likely relevant than another. And that is, it only needs to
+determine relative relevance, as opposed to absolute relevance. Now you can probably already sense that relative relevance would be easier to
+determine than absolute relevance. Because in the first case, we have to say exactly whether
+a document is relevant or not. And it turns out that ranking is indeed
+generally preferred to document selection. So let's look at these two
+strategies in more detail. So this picture shows how it works. So on the left side,
+we see these documents, and we use the pluses to indicate
+the relevant documents. So we can see the true relevant
+documents here consists this set of true relevant documents, consists
+of these process, these documents. And with the document selection function, we're going to basically
+classify them into two groups, relevant documents, and non-relevant ones. Of course, the classified will not
+be perfect so it will make mistakes. So here we can see, in the approximation
+of the relevant documents, we have got some number in the documents. And similarly, there is a relevant document that's
+misclassified as non-relevant. In the case of document ranking,
+we can see the system seems like, simply ranks all the documents in
+the descending order of the scores. And then, we're going to let the user
+stop wherever the user wants to stop. If the user wants to
+examine more documents, then the user will scroll down some
+more and then stop [INAUDIBLE]. But if the user only wants to
+read a few random documents, the user might stop at the top position. So in this case, the user stops at d4. So in fact, we have delivered
+these four documents to our user. So as I said ranking is generally
+preferred, and one of the reasons is because the classifier in the case of
+document selection is unlikely accurate. Why? Because the only clue
+is usually the query. But the query may not be accurate in the
+sense that it could be overly constrained. For example, you might expect relevant
+documents to talk about all these topics by using specific vocabulary. And as a result,
+you might match no relevant documents. Because in the collection, no others have discussed the topic
+using these vocabularies, right? So in this case,
+we'll see there is this problem of no relevant documents to return in
+the case of over-constrained query. On the other hand,
+if the query is under-constrained, for example, if the query does not have sufficient descriptive
+words to find the random documents. You may actually end up having of
+over delivery, and this when you thought these words my be sufficient
+to help you find the right documents. But, it turns out they
+are not sufficient and there are many distractions,
+documents using similar words. And so, this is a case of over delivery. Unfortunately, it's very hard to find the
+right position between these two extremes. Why? Because whether users looking for
+the information in general the user does not have a good knowledge about
+the information to be found. And in that case, the user does not
+have a good knowledge about what vocabularies will be used in
+those relevent documents. So it's very hard for a user to pre-specify the right
+level of constraints. Even if the classifier is accurate,
+we also still want to rend these relevant documents, because they
+are generally not equally relevant. Relevance is often a matter of degree. So we must prioritize these documents for
+a user to examine. And note that this
+prioritization is very important because a user cannot
+digest all the content the user generally would have to
+look at each document sequentially. And therefore, it would make sense to
+users with the most relevant documents. And that's what ranking is doing. So for these reasons,
+ranking is generally preferred. Now this preference also has
+a theoretical justification and this is given by the probability
+ranking principle. In the end of this lecture,
+there is reference for this. This principle says, returning a ranked
+list of documents in descending order of probability that a document
+is relevant to the query is the optimal strategy under
+the following two assumptions. First, the utility of
+a document (to a user) Is independent of the utility
+of any other document. Second, a user would be assumed to
+browse the results sequentially. Now it's easy to understand why these
+assumptions are needed in order to justify Site for the ranking strategy. Because if the documents are independent, then we can evaluate the utility
+of each document that's separate. And this would allow the computer
+score for each document independently. And then, we are going to rank these
+documents based on the scrolls. The second assumption is to say that the
+user would indeed follow the rank list. If the user is not going to follow
+the ranked list, is not going to examine the documents sequentially, then obviously
+the ordering would not be optimal. So under these two assumptions, we can
+theoretically justify the ranking strategy is, in fact, the best that you could do. Now, I've put one question here. Do these two assumptions hold? I suggest you to pause the lecture,
+for a moment, to think about this. Now, can you think of
+some examples that would suggest these assumptions
+aren't necessarily true. Now, if you think for a moment, you may realize none of
+the assumptions Is actually true. For example, in the case of
+independence assumption we might have documents that have similar or
+exactly the same content. If we look at each of them alone,
+each is relevant. But if the user has already seen
+one of them, we can assume it's generally not very useful for the user to
+see another similar or duplicated one. So clearly the utility
+on the document that is dependent on other documents
+that the user has seen. In some other cases you might see
+a scenario where one document that may not be useful to the user, but when three
+particular documents are put together. They provide answers to
+the user's question. So this is a collective relevance and
+that also suggests that the value of the document might
+depend on other documents. Sequential browsing generally would make
+sense if you have a ranked list there. But even if you have a rank list,
+there is evidence showing that users don't always just go strictly
+sequentially through the entire list. They sometimes will look at the bottom for
+example, or skip some. And if you think about the more
+complicated interfaces that we could possibly use like
+two dimensional in the phase. Where you can put that additional
+information on the screen then sequential browsing is a very
+restricted assumption. So the point here is that none of these assumptions is
+really true but less than that. But probability ranking principle
+establishes some solid foundation for ranking as a primary pattern for
+search engines. And this has actually been the basis for a lot of research work in
+information retrieval. And many hours have been designed
+based on this assumption, despite that the assumptions
+aren't necessarily true. And we can address this problem
+by doing post processing Of a ranked list, for example,
+to remove redundancy. So to summarize this lecture, the main points that you can
+take away are the following. First, text retrieval is
+an empirically defined Problem. And that means which algorithm is
+better must be judged by the users. Second, document ranking
+is generally preferred. And this will help users prioritize
+examination of search results. And this is also to bypass the difficulty
+in determining absolute relevance Because we can get some help from users
+in determining where to make the cut off, it's more flexible. So, this further suggests that the main
+technical challenge in designing a search engine is the design
+effective ranking function. In other words, we need to define
+what is the value of this function F on the query and document pair. How we design such a function is the main
+topic in the following lectures. There are two suggested
+additional readings. The first is the classical paper on
+the probability ranking principle. The second one is a must-read for anyone
+doing research on information retrieval. It's a classic IR book, which has
+excellent coverage of the main research and results in early days up to
+the time when the book was written. Chapter six of this book has
+an in-depth discussion of the Probability Ranking Principle and
+Probably for retrieval models in general."
+1,4,Overview of Text Retrieval Methods,"This lecture is a overview of
+text retrieval methods. In the previous lecture, we introduced
+the problem of text retrieval. We explained that the main problem is the design of ranking function
+to rank documents for a query. In this lecture, we will give an overview of different
+ways of designing this ranking function. So the problem is the following. We have a query that has
+a sequence of words and the document that's also
+a sequence of words. And we hope to define a function f that can compute a score based
+on the query and document. So the main challenge you hear is with
+design a good ranking function that can rank all the relevant documents
+on top of all the non-relevant ones. Clearly, this means our function
+must be able to measure the likelihood that a document
+d is relevant to a query q. That also means we have to have
+some way to define relevance. In particular, in order to
+implement the program to do that, we have to have a computational
+definition of relevance. And we achieve this goal by
+designing a retrieval model, which gives us
+a formalization of relevance. Now, over many decades, researchers have designed many
+different kinds of retrieval models. And they fall into different categories. First, one family of the models
+are based on the similarity idea. Basically, we assume that if
+a document is more similar to the query than another document is, then we will say the first document
+is more relevant than the second one. So in this case,
+the ranking function is defined as the similarity between the query and
+the document. One well known example in this
+case is vector space model, which we will cover more in
+detail later in the lecture. A second kind of models
+are called probabilistic models. In this family of models, we follow a very
+different strategy, where we assume that queries and documents are all
+observations from random variables. And we assume there is a binary
+random variable called R here to indicate whether a document
+is relevant to a query. We then define the score of document with
+respect to a query as a probability that this random variable R is equal to 1,
+given a particular document query. There are different cases
+of such a general idea. One is classic probabilistic model,
+another is language model, yet another is divergence
+from randomness model. In a later lecture, we will talk more
+about one case, which is language model. A third kind of model are based
+on probabilistic inference. So here the idea is to associate
+uncertainty to inference rules, and we can then quantify
+the probability that we can show that the query
+follows from the document. Finally, there is also a family of models that are using axiomatic thinking. Here, an idea is to define
+a set of constraints that we hope a good retrieval function to satisfy. So in this case, the problem is
+to seek a good ranking function that can satisfy all
+the desired constraints. Interestingly, although these different
+models are based on different thinking, in the end, the retrieval function
+tends to be very similar. And these functions tend to
+also involve similar variables. So now let's take a look at the common
+form of a state of the art retrieval model and to examine some of the common
+ideas used in all these models. First, these models are all
+based on the assumption of using bag of words to represent text,
+and we explained this in the natural
+language processing lecture. Bag of words representation remains
+the main representation used in all the search engines. So with this assumption,
+the score of a query, like a presidential campaign news
+with respect to a document of d here, would be based on scores computed
+based on each individual word. And that means the score would
+depend on the score of each word, such as presidential, campaign, and news. Here, we can see there
+are three different components, each corresponding to how well the
+document matches each of the query words. Inside of these functions,
+we see a number of heuristics used. So for example, one factor that
+affects the function d here is how many times does the word
+presidential occur in the document? This is called a term frequency, or TF. We might also denote as
+c of presidential and d. In general, if the word occurs
+more frequently in the document, then the value of this
+function would be larger. Another factor is,
+how long is the document? And this is to use the document length for
+scoring. In general, if a term occurs in a long document many times,
+it's not as significant as if it occurred the same number
+of times in a short document. Because in a long document, any term
+is expected to occur more frequently. Finally, there is this factor
+called document frequency. That is, we also want to look at how
+often presidential occurs in the entire collection, and we call this document
+frequency, or df of presidential. And in some other models,
+we might also use a probability to characterize this information. So here, I show the probability of
+presidential in the collection. So all these are trying to characterize
+the popularity of the term in the collection. In general, matching a rare term in
+the collection is contributing more to the overall score than
+matching up common term. So this captures some of the main ideas
+used in pretty much older state of the art original models. So now, a natural question is,
+which model works the best? Now it turns out that many
+models work equally well. So here are a list of
+the four major models that are generally regarded as
+a state of the art original models, pivoted length normalization,
+BM25, query likelihood, PL2. When optimized,
+these models tend to perform similarly. And this was discussed in detail in this
+reference at the end of this lecture. Among all these,
+BM25 is probably the most popular. It's most likely that this has been used
+in virtually all the search engines, and you will also often see this
+method discussed in research papers. And we'll talk more about this
+method later in some other lectures. So, to summarize, the main points made
+in this lecture are first the design of a good ranking function pre-requires a
+computational definition of relevance, and we achieve this goal by designing
+appropriate retrieval model. Second, many models are equally effective,
+but we don't have a single winner yet. Researchers are still active and
+working on this problem, trying to find a truly
+optimal retrieval model. Finally, the state of the art
+ranking functions tend to rely on the following ideas. First, bag of words representation. Second, TF and
+document frequency of words. Such information is used in
+the weighting function to determine the overall contribution of matching
+a word and document length. These are often combined in interesting
+ways, and we'll discuss how exactly they are combined to rank
+documents in the lectures later. There are two suggested additional
+readings if you have time. The first is a paper where you can
+find the detailed discussion and comparison of multiple
+state of the art models. The second is a book with
+a chapter that gives a broad review of different retrieval models."
