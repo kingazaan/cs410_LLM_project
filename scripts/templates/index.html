@@ -12,11 +12,15 @@
             <input id="text" type="text" name="input" placeholder="Ask a Question"></br>
             <input onclick="swap()" type="submit" value="Submit">
         </form>
-        <p id="p">{{info}}</p>
+        <div id="textDiv">
+            <p id="p1">{{question}}</p>
+            <p id="p2">{{answer}}</p>
+        </div>
     </div>
     <script>
         function swap(){
-            document.getElementById('p').innerHTML = "loading..."
+            document.getElementById('p1').innerHTML = "loading..."
+            document.getElementById('p2').innerHTML = ""
         }
     </script>
     <style>
@@ -39,6 +43,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        #textDiv {
+            width: 500px;
+            text-align: center;
         }
     </style>
 </body>
