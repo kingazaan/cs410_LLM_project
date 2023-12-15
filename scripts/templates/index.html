@@ -8,20 +8,31 @@
 <body>
     <div id="container">
         <h1>Text Information Systems LLM</h1>
+        <p>Hello, welcome to our LLM! Ask a question about course material below.</p>
         <form id="form" action="{{url_for('update')}}" method="POST">
             <input id="text" type="text" name="input" placeholder="Ask a Question"></br>
             <input onclick="swap()" type="submit" value="Submit">
         </form>
         <div id="textDiv">
-            <p id="p1">{{question}}</p>
+            <p id="p1" onchange="change()">{{question}}</p>
             <p id="p2">{{answer}}</p>
         </div>
     </div>
     <script>
         function swap(){
-            document.getElementById('p1').innerHTML = "loading..."
+            document.getElementById('p1').innerHTML = ""
             document.getElementById('p2').innerHTML = ""
+            setTimeout(() => {
+                document.getElementById('p1').innerHTML = "loading..."
+            }, 200)
         }
+        function changeAlignment(){
+            var text = document.getElementById('p2').innerHTML
+            if (text == 'Your question is to long for our model, please make it shorter than 50 characters. Thank You!'){
+                document.getElementById('p2').style.textAlign = 'center'
+            }
+        }
+        changeAlignment()
     </script>
     <style>
         body {
@@ -48,6 +59,14 @@
         #textDiv {
             width: 500px;
             text-align: center;
+        }
+
+        #p2 {
+            text-align: left;
+        }
+
+        h1 {
+            margin-bottom: 0px;
         }
     </style>
 </body>
