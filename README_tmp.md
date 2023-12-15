@@ -6,7 +6,7 @@ The `data` folder stores the crude data gleaned from the video transcripts of th
 
 ## Model
 The model implementation and testing lies in the `scripts` folder.
-- `testing_llm.ipynb` contains the implementation of the LLM model. It includes code to preprocess the dataset (e.g. word tokenization), the setup of the neural-network-based LLM model (with multiple variants, including scaled dot-product attention, multi-head attention and GPT), and a `Flask` frontend for users. 
+- `testing_llm.ipynb` contains the implementation of the LLM model. It includes code to preprocess the dataset (e.g. word tokenization), the setup of our GPT-based (using `nn` model to decode from massive pre-learned embeddings to pruduce answers to user input) LLM model (with multiple variants, including scaled dot-product attention and multi-head attention), and a `Flask` frontend for users. 
 - `testing_QA_finetuning.ipynb` attempts to fine-tune a snapshot of a trained model by creating a QA model.
 - `testing_bigram.ipynb` makes a bigram model (instead of the unigram models in `testing_llm.ipynb`) to parse pairs of consecutive words in the cleaned dataset.
 - `testing_pretrained_llm.ipynb` attempts to test our dataset on a pretrained LLM.
