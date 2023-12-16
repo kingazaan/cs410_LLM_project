@@ -90,8 +90,8 @@ Contribution: Flask is used to create a user-friendly web interface for interact
 
 # Contribution of Each Team Member
 
-All team members contributed equally, but in different ways. TELL HOW YOU CONTRIBUTED:
+All team members contributed equally, but in different ways.
 1. Azaan Barlas - Created the GPT model from scratch and trained it to talk to humnas; self-motivated
 2. Chris - Created frontend using Flask and integrated it with our GPT model
 2. Justin - scraped transcript data (transcripts from all CS 410 lecture videos on Coursera), compiled and edited presentation video
-3. Kaiyao - IDK
+3. Kaiyao - Created the CNN model for future evaluation of our LLM.
