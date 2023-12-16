@@ -2,7 +2,7 @@
 This is the repository of our CS 410 LLM project. This project transforms the transcripts of Fall 2023 CS 410 online lectures into a dataset and preprocesses it before using it to train a LLM model that can take a CS 410 - related question input and generate answers.
 
 # Video Presentation
-[https://youtu.be/CdfkFgU7p0s]()
+[[Please find video presentation here]()](https://www.youtube.com/watch?v=CdfkFgU7p0s)
 
 # CS 410 Lecture ChatBot Tool
 This README is the software documentation for this project.
@@ -39,8 +39,7 @@ Tokenizes and filters the cleaned transcripts.
 Step 6: Embeddings and Vocabulary
 Creates word embeddings and builds vocabulary
 
-Step 7: Implement loss function, parts of the block (tranformer class) such as Head, MultiHeadAttention, FeedForward, and finally the GPTLanguageModel Module class which actually embeds the input, passes it through the transformer blocks, and finally generates words as an otuput from the prompt. Configures and sets up the GPT-2 language model. More about this is explained in video here: [Please find video presentation here]()
-
+Step 7: Implement loss function, parts of the block (tranformer class) such as Head, MultiHeadAttention, FeedForward, and finally the GPTLanguageModel Module class which actually embeds the input, passes it through the transformer blocks, and finally generates words as an otuput from the prompt. Configures and sets up the GPT-2 language model. More about this is explained in video here: [[Please find video presentation here]()](https://www.youtube.com/watch?v=CdfkFgU7p0s)
 Step 8: Training
 Defines Trainer and trains the GPT-2 model
 
@@ -93,6 +92,6 @@ Contribution: Flask is used to create a user-friendly web interface for interact
 
 All team members contributed equally, but in different ways. TELL HOW YOU CONTRIBUTED:
 1. Azaan Barlas - Created the GPT model from scratch and trained it to talk to humnas; self-motivated
-2. Chris - Created frontend
+2. Chris - Created frontend using Flask and integrated it with our GPT model
 2. Justin - scraped transcript data (transcripts from all CS 410 lecture videos on Coursera), compiled and edited presentation video
 3. Kaiyao - IDK
