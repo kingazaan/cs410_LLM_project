@@ -2,7 +2,7 @@
 This is the repository of our CS 410 LLM project. This project transforms the transcripts of Fall 2023 CS 410 online lectures into a dataset and preprocesses it before using it to train a LLM model that can take a CS 410 - related question input and generate answers.
 
 # Video Presentation
-[Please find video presentation here]()
+[https://youtu.be/CdfkFgU7p0s]()
 
 # CS 410 Lecture ChatBot Tool
 This README is the software documentation for this project.
