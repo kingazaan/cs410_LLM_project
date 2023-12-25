@@ -1,5 +1,10 @@
 # CS 410 LLM Project
-This is the repository of our CS 410 LLM project. This project transforms the transcripts of Fall 2023 CS 410 online lectures into a dataset and preprocesses it before using it to train a LLM model that can take a CS 410 - related question input and generate answers.
+This is the repository of our CS 410 LLM project. This project transforms the transcripts of Fall 2023 CS 410 online lectures into a dataset and preprocesses it before using it to train a LLM model that can take a CS 410 - related question input and generate answers. Ask it a question about our course, and see how it answers!
+
+# Demo
+![alt text](1.gif)
+![alt text](2.gif)
+![alt text](3.gif)
 
 # Video Presentation
 [Please find video presentation here](https://www.youtube.com/watch?v=CdfkFgU7p0s)
